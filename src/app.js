@@ -99,7 +99,8 @@ app.get('*', (req, res) => {
         errorMsg: 'Page not found.'
     })})
 
-
-app.listen(3000, () => {
-    console.log("Server is up on port 3000.")
+// if PORT exist use it else use 3000 to run locally... (67 lesson in node course)
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+    console.log("Server is up on port " + port + ".")
 })
